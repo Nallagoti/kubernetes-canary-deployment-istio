@@ -62,16 +62,16 @@ DevOps Engineer | Fresher
 ## Screenshots
 
 ### 1. Kubernetes Pods
-![Kubernetes Pods](docs/screenshots/Kubernetes-Pods.png)
+![Kubernetes Pods](docs/screenshots/Kubernetes-Pods.jpeg)
 
 ### 2. Canary Traffic Configuration
 ![Traffic Configuration](docs/screenshots/Canary-Traffic-Configuration.png)
 
 ### 3. Canary Traffic Split
-![Traffic Split](docs/screenshots/Canary-Traffic-Split.png)
+![Traffic Split](docs/screenshots/Canary-Traffic-Split.jpeg)
 
 ### 4. Canary Promotion
-![Canary Promotion](docs/screenshots/Canary-Promotion.png)
+![Canary Promotion](docs/screenshots/Canary-Promotion.jpeg)
 
 ### 5. Canary Rollback
 ![Canary Rollback](docs/screenshots/Canary-Rollback.png)
