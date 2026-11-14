@@ -7,7 +7,7 @@ Two application versions are deployed:
 - V1: Stable Version
 - V2: New Version
 
-Istio VirtualService manages traffic distribution between the two versions.
+Istio VirtualService manages traffic distribution between the two versions, allowing controlled releases, promotion, and rollback.
 
 ## Tools and Technologies
 - AWS EC2
@@ -18,26 +18,28 @@ Istio VirtualService manages traffic distribution between the two versions.
 - YAML
 
 ## Project Architecture
-1. AWS EC2 hosts the K3s Kubernetes cluster.
-2. Istio manages service-to-service communication and traffic routing.
-3. Two application versions (V1 and V2) run as Kubernetes deployments.
-4. DestinationRule defines subsets for V1 and V2.
-5. VirtualService controls traffic distribution.
-6. Istio Ingress Gateway exposes the application externally.
+AWS EC2 hosts the K3s cluster. Istio Ingress Gateway receives external traffic and forwards it through the VirtualService. DestinationRule defines V1 and V2 subsets.
+
+See the [Architecture Diagram](docs/architecture.md).
 
 ## Canary Deployment
 Initial traffic distribution:
-- V1: 80%
-- V2: 20%
+- V1: 80% (Stable)
+- V2: 20% (Canary)
 
-## Testing
-- Verified that all application pods were running.
-- Tested traffic distribution with 100 requests.
-- Observed approximately 80% traffic to V1 and 20% to V2.
-- Promoted V2 to receive 100% traffic.
-- Verified that all requests reached V2.
-- Performed rollback to V1 with 100% traffic.
-- Verified that all requests reached V1 after rollback.
+## Testing Results
+- Verified all application pods were running.
+- Internal test: 83 requests reached V1 and 17 reached V2.
+- External test: 82 requests reached V1 and 18 reached V2.
+- Promoted V2 to receive 100% traffic: 20/20 requests reached V2.
+- Rolled back to V1: 20/20 requests reached V1.
+
+Traffic distribution is approximate and can vary between test runs.
+
+## Documentation
+- [Architecture Diagram](docs/architecture.md)
+- [Deployment Guide](docs/deployment-guide.md)
+- [Testing Report](docs/testing-report.md)
 
 ## Project Files
 - app.yaml: Application deployments and service.
@@ -56,3 +58,6 @@ Initial traffic distribution:
 ## Author
 Nissitha Nallagoti  
 DevOps Engineer | Fresher
+
+## Screenshots
+Project deployment and testing screenshots are available in [docs/screenshots](docs/screenshots/).
