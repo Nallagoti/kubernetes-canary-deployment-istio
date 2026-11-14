@@ -60,4 +60,21 @@ Nissitha Nallagoti
 DevOps Engineer | Fresher
 
 ## Screenshots
-Project deployment and testing screenshots are available in [docs/screenshots](docs/screenshots/).
+
+### 1. Kubernetes Pods
+![Kubernetes Pods](docs/screenshots/Kubernetes-Pods.png)
+
+### 2. Canary Traffic Configuration
+![Traffic Configuration](docs/screenshots/Canary-Traffic-Configuration.png)
+
+### 3. Canary Traffic Split
+![Traffic Split](docs/screenshots/Canary-Traffic-Split.png)
+
+### 4. Canary Promotion
+![Canary Promotion](docs/screenshots/Canary-Promotion.png)
+
+### 5. Canary Rollback
+![Canary Rollback](docs/screenshots/Canary-Rollback.png)
+
+### 6. GitHub Repository
+![GitHub Repository](docs/screenshots/GitHub-Repository.png)
